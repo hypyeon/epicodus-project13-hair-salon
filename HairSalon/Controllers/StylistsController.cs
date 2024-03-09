@@ -49,8 +49,22 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
-      return View(thisStylist);
+      Stylist stylist = _db.Stylists.Include(s => s.Clients).FirstOrDefault(s => s.StylistId == id);
+      return View(stylist);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      Stylist stylist = _db.Stylists.FirstOrDefault(s => s.StylistId == id);
+      return View(stylist);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Stylist stylist)
+    {
+      _db.Stylists.Update(stylist);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
