@@ -12,7 +12,7 @@
   @Html.TextBoxFor(model => model.Name)
 
   @Html.LabelFor(model => model.Experience, "Experience (in year): ")
-  @Html.TextBoxFor(model => model.Experience, new { type = "number", step = "0.5"})
+  @Html.TextBoxFor(model => model.Experience, new { type = "number", step = "0.5" })
 
   @Html.LabelFor(model => model.Specialty, "Specialty: ")
   @Html.DropDownListFor(model => model.Specialty, ViewBag.Specialties as List<SelectListItem>)

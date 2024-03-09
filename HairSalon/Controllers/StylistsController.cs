@@ -4,6 +4,7 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace HairSalon.Controllers
 {
@@ -27,11 +28,11 @@ namespace HairSalon.Controllers
     { 
       var specialties = new List<SelectListItem>
       {
-        new SelectListItem { Value = "1", Text = "Short Hair" },
-        new SelectListItem { Value = "2", Text = "Long Hair" },
-        new SelectListItem { Value = "3", Text = "Haircut/Trim" },
-        new SelectListItem { Value = "4", Text = "Hair Coloring/Bleaching" },
-        new SelectListItem { Value = "5", Text = "Hair Treatment/Consultation" }
+        new SelectListItem { Value = "Short Hair", Text = "Short Hair" },
+        new SelectListItem { Value = "Long Hair", Text = "Long Hair" },
+        new SelectListItem { Value = "Haircut/Trim", Text = "Haircut/Trim" },
+        new SelectListItem { Value = "Hair Coloring/Bleaching", Text = "Hair Coloring/Bleaching" },
+        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" }
       };
       ViewBag.Specialties = specialties;
       ViewBag.PageTitle = "Register Stylist";
@@ -44,6 +45,12 @@ namespace HairSalon.Controllers
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
   }
 }
