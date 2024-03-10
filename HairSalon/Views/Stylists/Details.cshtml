@@ -7,9 +7,20 @@
 
 <h2>Stylist Information</h2>
 <hr />
-<h3>@Html.DisplayFor(model => model.Name)<h3>
+<h3>@Html.DisplayFor(model => model.Name)</h3>
 <p>@Html.DisplayFor(model => model.Experience) year(s) of experience | @Html.DisplayFor(model => model.Specialty)</p>
-<p>Clients: </p>
+
+@if (Model.Clients.Count == 0)
+{
+  <p>No client registered yet. </p>
+  <p>Click @Html.ActionLink("here", "Create", "Clients") to add new client for @Html.DisplayFor(model => model.Name).</p>
+} 
+else {
+  @foreach(Client client in Model.Clients)
+  {
+    <div>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</div>
+  }
+}
 
 <p>@Html.ActionLink("Edit Info", "Edit", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Unregister this stylist", "Delete", new { id = Model.StylistId })</p>
