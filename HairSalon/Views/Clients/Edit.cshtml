@@ -4,27 +4,36 @@
 
 @model HairSalon.Models.Client
 
-<h2>Edit Information</h2>
-<hr />
+<div class="card" id="client-edit">
+  <h2>Edit Information</h2>
+  <hr />
+  <h4>Current Information:</h4>
+  <p>@Html.DisplayFor(model => model.Name) | @Html.DisplayFor(model => model.ContactInfo)</p>
 
-<h4>Current Information:</h4>
-<p>@Html.DisplayFor(model => model.Name) | @Html.DisplayFor(model => model.ContactInfo)</p>
-
-@using (Html.BeginForm())
-{
-  <h4>Update Info here: </h4>
-  @Html.HiddenFor(model => model.ClientId)
-
-  @Html.LabelFor(model => model.Name, "Name: ")
-  @Html.EditorFor(model => model.Name)
-
-  @Html.LabelFor(model => model.ContactInfo, "Phone: ")
-  @Html.EditorFor(model => model.ContactInfo)
-
-  @Html.LabelFor(model => model.Stylist, "Stylist: ")
-  @Html.DropDownList("StylistId")
-
-  <input type="submit" value="Update" />
-}
-<p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Back to Stylist List", "Index")</p>
+  <div class="form">
+    <h4>Update Info here: </h4>
+    @using (Html.BeginForm())
+    {
+      <div class="form-div">
+        @Html.HiddenFor(model => model.ClientId)
+        <div>
+          @Html.LabelFor(model => model.Name, "Name: ")
+          @Html.EditorFor(model => model.Name)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.ContactInfo, "Phone: ")
+          @Html.EditorFor(model => model.ContactInfo)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Stylist, "Stylist: ")
+          @Html.DropDownList("StylistId")
+        </div>
+      </div>
+      <input type="submit" value="Update" />
+    }
+  </div>
+  <div class="buttons">
+    <p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details", new { id = Model.ClientId })</p>
+    <p>@Html.ActionLink("Back to Stylist List", "Index")</p>
+  </div>
+</div>

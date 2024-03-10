@@ -1,1 +1,253 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+h2 {
+  font-family: "Whisper", cursive;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  padding: 3rem;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+.buttons p {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  border: 3px solid black;
+  cursor: pointer;
+}
+.buttons p:hover {
+  background-color: black;
+}
+.buttons p:hover a {
+  color: white;
+}
+
+.form {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+  width: 30vw;
+  color: white;
+  padding: 2rem;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form .form-div div {
+  margin: 1rem;
+}
+.form input[type=submit] {
+  padding: 0.25rem 1rem;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+  font-family: "Montserrat Alternates", sans-serif;
+  box-shadow: 0 0 5px white;
+  margin: auto;
+  font-weight: 600;
+}
+
+#home {
+  gap: 3rem;
+}
+#home h1 {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-family: "Whisper", cursive;
+  font-size: 5rem;
+}
+#home #home-bg {
+  background-image: url(../img/mainpage.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  width: 70vw;
+  height: 40vh;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px;
+}
+#home #home-bg::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
+}
+
+#stylist-index {
+  gap: 1.5rem;
+}
+#stylist-index #stylist-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+#stylist-index #stylist-list .stylist-name {
+  background-color: white;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+#stylist-index #stylist-list .stylist-name:hover {
+  background-color: palevioletred;
+  box-shadow: 0 0 10px palevioletred;
+}
+#stylist-index #stylist-list .stylist-name:hover a {
+  color: white;
+}
+
+#stylist-create, #stylist-edit, #client-create {
+  gap: 2rem;
+}
+
+#stylist-detail {
+  gap: 1rem;
+}
+#stylist-detail .stylist-info {
+  padding: 2rem;
+  background-color: white;
+}
+#stylist-detail .stylist-info h3 {
+  margin-bottom: 1rem;
+}
+#stylist-detail .stylist-client {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: palevioletred;
+  border-radius: 6px;
+}
+#stylist-detail .stylist-client a {
+  color: white;
+}
+#stylist-detail .stylist-client:hover {
+  box-shadow: 0 0 10px palevioletred;
+}
+#stylist-detail .buttons {
+  margin-top: 1rem;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.delete h3 {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+}
+.delete input[type=submit] {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+  font-family: "Montserrat Alternates", sans-serif;
+  box-shadow: 0 0 5px white;
+  margin: auto;
+  font-weight: 600;
+  color: red;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+#client-index {
+  gap: 1.5rem;
+}
+#client-index #client-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+}
+#client-index #client-list .client-name {
+  background-color: white;
+  width: 160px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+#client-index #client-list .client-name:hover {
+  background-color: palevioletred;
+  box-shadow: 0 0 10px palevioletred;
+}
+#client-index #client-list .client-name:hover a {
+  color: white;
+}
+
+#client-detail {
+  gap: 1rem;
+}
+#client-detail .client-info {
+  padding: 2rem;
+  background-color: white;
+}
+#client-detail .client-info h3 {
+  margin-bottom: 1rem;
+}
+#client-detail .client-info p {
+  padding: 0.25rem 0;
+}
+#client-detail .buttons {
+  margin-top: 1rem;
+}
+
+#client-edit {
+  gap: 1rem;
+}
+#client-edit .client-info {
+  padding: 2rem;
+  background-color: white;
+}
+#client-edit .client-info h3 {
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=styles.css.map */

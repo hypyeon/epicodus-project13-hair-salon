@@ -4,19 +4,30 @@
 
 @model HairSalon.Models.Client
 
-<h4>Register New Client</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name, "Name: ")
-  @Html.TextBoxFor(model => model.Name)
-
-  @Html.LabelFor(model => model.Stylist, "Stylist: ")
-  @Html.DropDownList("StylistId")
-
-  @Html.LabelFor(model => model.ContactInfo, "Phone: ")
-  @Html.TextBoxFor(model => model.ContactInfo)
-
-  <input type="submit" value="Register" />
-}
-<p>@Html.ActionLink("Back to Client List", "Index")</p>
-<p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+<div class="card" id="client-create">
+  <h2>Register New Client</h2>
+  <div class="form">
+    @using (Html.BeginForm())
+    {
+      <div class="form-div">
+        <div>
+          @Html.LabelFor(model => model.Name, "Name: ")
+          @Html.TextBoxFor(model => model.Name)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Stylist, "Stylist: ")
+          @Html.DropDownList("StylistId")
+        </div>
+        <div>
+          @Html.LabelFor(model => model.ContactInfo, "Phone: ")
+          @Html.TextBoxFor(model => model.ContactInfo)
+        </div>
+      </div>
+      <input type="submit" value="Register" />
+    }
+  </div>
+  <div class="buttons">
+    <p>@Html.ActionLink("Back to Client List", "Index")</p>
+    <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+  </div>
+</div>

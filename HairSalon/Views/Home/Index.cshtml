@@ -2,7 +2,13 @@
   Layout = "_Layout";
 }
 
-<h1>Eau Clair's Hair Salon</h1>
+<div id="home" class="card">
+  <h1>Eau Clair's Hair Salon</h1>
 
-<p>@Html.ActionLink("Stylist List", "Index", "Stylists")</p>
-<p>@Html.ActionLink("Client List", "Index", "Clients")</p>
+  <div id="home-bg"></div>
+
+  <div class="buttons">
+    <p>@Html.ActionLink("Stylist List", "Index", "Stylists")</p>
+    <p>@Html.ActionLink("Client List", "Index", "Clients")</p>
+  </div>
+</div>

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$fontBanner: "Whisper", cursive;
+$fontBasic: "Montserrat Alternates", sans-serif;
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  @include flexCenter;
+  background-color: antiquewhite;
+  font-family: $fontBasic;
+}
+
+h2 {
+  font-family: $fontBanner;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  // background-color: white;
+  padding: 3rem;
+  width: 80vw;
+  @include flexCenter;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  p {
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    border: 3px solid black;
+    cursor: pointer;
+    &:hover {
+      background-color: black;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.form {
+  form {
+    @include flexCenter;
+  }
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+  width: 30vw;
+  color: white;
+  padding: 2rem;
+  .form-div {
+    div {
+      margin: 1rem;
+    }
+  }
+  input[type="submit"] {
+    padding: .25rem 1rem;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    font-family: $fontBasic;
+    box-shadow: 0 0 5px white;
+    margin: auto;
+    font-weight: 600;
+  }
+}
+
+#home {
+  gap: 3rem;
+  h1 {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-family: $fontBanner;
+    font-size: 5rem;
+  }
+  #home-bg {
+    background-image: url(../img/mainpage.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    width: 70vw;
+    height: 40vh;
+    position: relative;
+    z-index: 0;
+    border-radius: 15px;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 15px;
+    }
+  }
+}
+
+#stylist-index {
+  gap: 1.5rem;
+  #stylist-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+    .stylist-name {
+      background-color: white;
+      width: 160px;
+      height: 160px;
+      @include flexCenter;
+      text-align: center;
+      border-radius: 15px;
+      &:hover {
+        background-color: palevioletred;
+        box-shadow: 0 0 10px palevioletred;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#stylist-create, #stylist-edit, #client-create {
+  gap: 2rem;
+}
+
+#stylist-detail {
+  gap: 1rem;
+  .stylist-info {
+    padding: 2rem;
+    background-color: white;
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+  .stylist-client {
+    text-align: center;
+    padding: .5rem 1rem;
+    background-color: palevioletred;
+    border-radius: 6px;
+    a {
+      color: white;
+    }
+    &:hover {
+      box-shadow: 0 0 10px palevioletred;
+    }
+  }
+  .buttons {
+    margin-top: 1rem;
+  }
+}
+
+.delete {
+  @include flexCenter;
+  gap: 2rem;
+  h3 {
+    padding: .5rem 1rem;
+    
+    font-size: 2rem;
+  }
+  input[type="submit"] {
+    padding: .5rem 1rem;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    font-family: $fontBasic;
+    box-shadow: 0 0 5px white;
+    margin: auto;
+    font-weight: 600;
+    color: red;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+}
+
+#client-index {
+  gap: 1.5rem;
+  #client-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem;
+    .client-name {
+      background-color: white;
+      width: 160px;
+      height: 40px;
+      @include flexCenter;
+      text-align: center;
+      border-radius: 15px;
+      &:hover {
+        background-color: palevioletred;
+        box-shadow: 0 0 10px palevioletred;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#client-detail {
+  gap: 1rem;
+  .client-info {
+    padding: 2rem;
+    background-color: white;
+    h3 {
+      margin-bottom: 1rem;
+    }
+    p {
+      padding: .25rem 0;
+    }
+  }
+  .buttons {
+    margin-top: 1rem;
+  }
+}
+
+#client-edit {
+  gap: 1rem;
+  .client-info {
+    padding: 2rem;
+    background-color: white;
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+}

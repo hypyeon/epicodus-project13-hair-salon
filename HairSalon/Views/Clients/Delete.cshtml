@@ -6,9 +6,13 @@
 
 <h3>Please confirm that you are removing the following client from your list.</h3>
 
-@Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Confirm" />
-}
-@Html.ActionLink("Back to Client List", "Index")
+<div class="card delete">
+  <h3>@Html.DisplayFor(model => model.Name)</h3>
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Confirm and remove" />
+  }
+  <div class="buttons">
+    <p>@Html.ActionLink("Back to Client List", "Index")</p>
+  </div>
+</div>

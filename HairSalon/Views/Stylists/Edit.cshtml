@@ -4,27 +4,39 @@
 
 @model HairSalon.Models.Stylist
 
-<h2>Edit Information</h2>
-<hr />
+<div class="card" id="stylist-edit">
+  <h2>Edit Information</h2>
+  <hr />
 
-<h4>Current Information:</h4>
-<p>@Html.DisplayFor(model => model.Name) | Specialty: @Html.DisplayFor(model => model.Specialty) | Experience: @Html.DisplayFor(model => model.Experience) year(s)</p>
+  <h4>Current Information:</h4>
+  <p>@Html.DisplayFor(model => model.Name) | Specialty: @Html.DisplayFor(model => model.Specialty) | Experience: @Html.DisplayFor(model => model.Experience) year(s)</p>
 
-@using (Html.BeginForm())
-{
-  <h4>Update Info here: </h4>
-  @Html.HiddenFor(model => model.StylistId)
+  <div class="form">
+    <h4>Update Info here: </h4>
+    @using (Html.BeginForm())
+    {
+      <div class="form-div">
+        @Html.HiddenFor(model => model.StylistId)
+        <div>
+          @Html.LabelFor(model => model.Name, "Name: ")
+          @Html.EditorFor(model => model.Name)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Specialty, "Specialty: ")
+          @Html.DropDownListFor(model => model.Specialty, ViewBag.Specialties as List<SelectListItem>)
+        </div>
+        <div>
+          @Html.LabelFor(model => model.Experience, "Experience: ")
+          @Html.TextBoxFor(model => model.Experience, new { type = "number", step = "0.5" })
+        </div>
+      </div>
+      <input type="submit" value="Update" />
+    }
 
-  @Html.LabelFor(model => model.Name, "Name: ")
-  @Html.EditorFor(model => model.Name)
+  </div>
+  <div class="buttons">
+    <p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details", new { id = Model.StylistId })</p>
+    <p>@Html.ActionLink("Back to Stylist List", "Index")</p>
+  </div>
+</div>
 
-  @Html.LabelFor(model => model.Specialty, "Specialty: ")
-  @Html.DropDownListFor(model => model.Specialty, ViewBag.Specialties as List<SelectListItem>)
-
-  @Html.LabelFor(model => model.Experience, "Experience: ")
-  @Html.TextBoxFor(model => model.Experience, new { type = "number", step = "0.5" })
-
-  <input type="submit" value="Update" />
-}
-<p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Back to Stylist List", "Index")</p>
