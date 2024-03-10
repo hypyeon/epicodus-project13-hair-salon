@@ -32,7 +32,8 @@ namespace HairSalon.Controllers
         new SelectListItem { Value = "Long Hair", Text = "Long Hair" },
         new SelectListItem { Value = "Haircut/Trim", Text = "Haircut/Trim" },
         new SelectListItem { Value = "Hair Coloring/Bleaching", Text = "Hair Coloring/Bleaching" },
-        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" }
+        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" },
+        new SelectListItem { Value = "Perm/Straightning", Text = "Perm/Straightning" }
       };
       ViewBag.Specialties = specialties;
       ViewBag.PageTitle = "Register Stylist";
@@ -62,7 +63,8 @@ namespace HairSalon.Controllers
         new SelectListItem { Value = "Long Hair", Text = "Long Hair" },
         new SelectListItem { Value = "Haircut/Trim", Text = "Haircut/Trim" },
         new SelectListItem { Value = "Hair Coloring/Bleaching", Text = "Hair Coloring/Bleaching" },
-        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" }
+        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" },
+        new SelectListItem { Value = "Perm/Straightning", Text = "Perm/Straightning" }
       };
       ViewBag.Specialties = specialties;
       return View(stylist);

@@ -19,10 +19,10 @@ else {
   <h4>Clients: </h4>
   @foreach(Client client in Model.Clients)
   {
-    <div>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</div>
+    <div>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</div>
   }
 }
 
 <p>@Html.ActionLink("Edit Info", "Edit", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Unregister this stylist", "Delete", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Back to Stylist List", "Index")</p>
+<p>@Html.ActionLink("View Stylist List", "Index")</p>
