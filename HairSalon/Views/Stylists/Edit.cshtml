@@ -26,5 +26,5 @@
 
   <input type="submit" value="Update" />
 }
-<p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details")</p>
+<p>@Html.ActionLink($"Back to {Model.Name}'s Info", "Details", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Back to Stylist List", "Index")</p>
