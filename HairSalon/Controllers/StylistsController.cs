@@ -20,7 +20,7 @@ namespace HairSalon.Controllers
     public ActionResult Index()
     {
       List<Stylist> model = _db.Stylists.ToList();
-      ViewBag.PageTitle = "Stylist List";
+      // ViewBag.PageTitle = "Stylist List";
       return View(model);
     }
 
@@ -56,6 +56,15 @@ namespace HairSalon.Controllers
     public ActionResult Edit(int id)
     {
       Stylist stylist = _db.Stylists.FirstOrDefault(s => s.StylistId == id);
+      var specialties = new List<SelectListItem>
+      {
+        new SelectListItem { Value = "Short Hair", Text = "Short Hair" },
+        new SelectListItem { Value = "Long Hair", Text = "Long Hair" },
+        new SelectListItem { Value = "Haircut/Trim", Text = "Haircut/Trim" },
+        new SelectListItem { Value = "Hair Coloring/Bleaching", Text = "Hair Coloring/Bleaching" },
+        new SelectListItem { Value = "Hair Treatment/Consultation", Text = "Hair Treatment/Consultation" }
+      };
+      ViewBag.Specialties = specialties;
       return View(stylist);
     }
 
@@ -64,7 +73,7 @@ namespace HairSalon.Controllers
     {
       _db.Stylists.Update(stylist);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = stylist.StylistId });
     }
 
     public ActionResult Delete(int id)

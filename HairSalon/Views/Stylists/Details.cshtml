@@ -8,7 +8,7 @@
 <h2>Stylist Information</h2>
 <hr />
 <h3>@Html.DisplayFor(model => model.Name)</h3>
-<p>@Html.DisplayFor(model => model.Experience) year(s) of experience | @Html.DisplayFor(model => model.Specialty)</p>
+<p>@Html.DisplayFor(model => model.Specialty) | @Html.DisplayFor(model => model.Experience) year(s) of experience</p>
 
 @if (Model.Clients.Count == 0)
 {
@@ -16,6 +16,7 @@
   <p>Click @Html.ActionLink("here", "Create", "Clients") to add new client for @Html.DisplayFor(model => model.Name).</p>
 } 
 else {
+  <h4>Clients: </h4>
   @foreach(Client client in Model.Clients)
   {
     <div>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</div>
