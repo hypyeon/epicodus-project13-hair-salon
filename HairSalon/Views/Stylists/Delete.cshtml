@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h3>Please confirm that you are removing the following stylist from your list.</h3>
+
+@Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Confirm" />
+}
+@Html.ActionLink("Back to Stylist List", "Index")
