@@ -57,7 +57,7 @@ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
 After you are finished with the above steps, reopen the *Navigator* > *Schemas* tab. Right click and select **Refresh All** to view the created database.
 
 ## Known Bugs
-*To be updated - currently under development as of March 08, 2024*
+No bug found as of March 10, 2024
 
 ## License
 [MIT](/LICENSE.txt) | Copyright © 2024 Hayeong Pyeon
