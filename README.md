@@ -1,7 +1,7 @@
 # Eau Clair's Salon 💇🏽
 by Hayeong Pyeon
 
-![preview](./HairSalon/wwwroot/img/preview.png)
+![preview](./HairSalon/wwwroot/img/previewImg.png)
 
 ## Table of Contents
 1. [Technologies Used](#technologies-used)
